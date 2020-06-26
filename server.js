@@ -44,6 +44,7 @@ function weather(req, resp){
     allWeather.push(weather);
 
   });
+  console.log(allWeather);
   resp.status(200).json(allWeather);
 
 }

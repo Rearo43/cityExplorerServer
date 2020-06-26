@@ -40,20 +40,18 @@ function weather(req, resp){
   let allWeather = [];
 
   dataWeather.data.forEach(dayData => {
-    let weather = new Weather(dayData);
-    allWeather.push(weather);
+        let weather = new Weather(dayData);
+        allWeather.push(weather);
+    });
 
-  });
-  console.log(allWeather);
   resp.status(200).json(allWeather);
-
 }
 
 function Weather(info){
   let getDate = new Date(info.datetime);
 
   this.forcast = info.weather.description;
-  this.datetime = getDate.toDateString();
+  this.time = getDate.toDateString();
 }
 
 app.use('*', (req,resp) => {

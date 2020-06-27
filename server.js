@@ -51,7 +51,7 @@ function weather(req, resp){
 function Weather(info){
   let getDate = new Date(info.datetime);
 
-  this.forcast = info.weather.description;
+  this.forecast = info.weather.description;
   this.time = getDate.toDateString();
 }
 
